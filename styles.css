@@ -1,0 +1,13 @@
+.scroll_box{
+  height: 150px;
+  width: 400px;
+  overflow: auto;
+}
+.add_row_scroll_box{
+  overflow: auto;
+  width: 400px
+}
+
+td, th{
+  border: solid black;
+}
