@@ -27,6 +27,7 @@ This is the inteface for the seasons table, you will be able to veiw all the row
 <p>
 Here is the table for Seasons:
 </p>
+<div class="scroll_box">
 <table id="seasons" >
 <thead>
   <tr>
@@ -48,12 +49,14 @@ Here is the table for Seasons:
    </thead>
    
    </table>
+</div>
    <br />
 <form>
 <legend>
 Add a row to the table:
 </legend>
-<table id="add_league_histories">
+<div class="add_row_scroll_box">
+<table id="add seasons">
 <thead>
   <tr>
    <th>league_id</th>
@@ -81,6 +84,7 @@ Add a row to the table:
     <td><input type="text" name="most_improved_player_of_the_year" size="10" maxlength ="255"></td>
     <td><input type="text" name="sixth_man_of_the_year" size="10" maxlength ="255"></td>
     </table> 
+</div>
    <div>
     <br />
         <input type="submit" value="Submit" />
