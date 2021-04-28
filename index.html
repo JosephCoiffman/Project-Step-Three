@@ -7,10 +7,10 @@
 
 
 <h1>
-LEAGUE HISTORIES
+League Histories
 </h1>
 <p>
-This is the page for the league_histories table. Here, you are able to view, edit, delete, and add a row on to the table
+This is the page for the League Histories table. Here, you are able to view, edit, delete, and add a row on to the table.
 </p>
 <div id="links">
 <ul>
@@ -28,7 +28,7 @@ This is the page for the league_histories table. Here, you are able to view, edi
 
 Here is the table for league_histories:
 <br/>
-
+<div class="scroll_box">
 <table id="league_histories" >
 <thead>
   <tr>
@@ -39,7 +39,9 @@ Here is the table for league_histories:
    </tr>
    </thead>
    
-   </table>
+   </table>  
+</div>
+
 
    <br />
 
@@ -48,15 +50,16 @@ Here is the table for league_histories:
 <legend>
 Add a row to the table:
 </legend>
-
+<div class="add_row_scroll_box">
 <table id="add_league_histories">
 <thead>
   <tr>
   <th> completed_seasons_num</th>
    <tbody>
   <tr>
-    <td> <input type="number" name="completed_seasons_num" size="10" maxlength="11"></td>
+    <td> <input type="number" name="completed_seasons_num" size="10" maxlength="11" min="0"></td>
     </table>
+</div>
 
    <div>
     <br />
