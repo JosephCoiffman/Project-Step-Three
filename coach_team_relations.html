@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+
+<h1>
+COACH TEAM RELATIONS
+</h1>
+<p>
+This is the page for the coach_team_relations table. Here, you are able to view, edit, delete, and add a row on to the table
+</p>
+<div id="links">
+<ul>
+<li><a href="index.html">League Histories</a> </li>
+<li><a href="seasons.html">Seasons</a> </li>
+<li><a href="teams.html">Teams</a> </li>
+<li><a href="players.html">Players</a> </li>
+<li><a href="player_team_relations.html">Player Team Relations</a> </li>
+<li><a href="coaches.html">Coaches</a> </li>
+<li><a href="coach_team_relations.html">Coach Team Relations</a> </li>
+</ul>
+</div>
+
+<p>
+
+Here is the table for coach_team_relations:
+<br/>
+
+<table id="coach_team_relations" >
+<thead>
+  <tr>
+   <th>coach_team_id</th>
+   <th>coach_id</th>
+   <th>team_id</th>
+   <th>Edit</th>
+   <th>Delete</th>
+   </tr>
+   </thead>
+   
+   </table>
+
+   <br />
+
+
+<form>
+<legend>
+Add a row to the table:
+</legend>
+
+<table id="add_coach_team_relations">
+<thead>
+  <tr>
+  <th>coach_id</th>
+  <th>team_id</th>
+   <tbody>
+  <tr>
+    <td> <input type="number" name="coach_id" size="10" maxlength="11"></td>
+    <td> <input type="number" name="team_id" size="10" maxlength="11"></td>
+    </table>
+
+   <div>
+    <br />
+        <input type="submit" value="Submit" />
+   </div>
+    </form>
+</p>
+
 </body>
+
+
 </html>
