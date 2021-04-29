@@ -5,112 +5,108 @@
 </head>
 <body>
 
-<h1>
-Seasons
-</h1>
-<p>
-This is the page for the Seasons table. Here, you are able to view, edit, delete, and add a row on to the table.
-</p>
-<div id="links">
-<ul>
-  <li><a href="index.html">League Histories</a> </li>
-  <li><a href="seasons.html">Seasons</a> </li>
-  <li><a href="teams.html">Teams</a> </li>
-  <li><a href="players.html">Players</a> </li>
-  <li><a href="player_team_relations.html">Player Team Relations</a> </li>
-  <li><a href="coaches.html">Coaches</a> </li>
-  <li><a href="coach_team_relations.html">Coach Team Relations</a> </li>
-</ul>
-</div>
+  <div id="links">
+    <a href="index.html">Home</a> |
+    <a href="league_histories.html">League Histories</a> |
+    <a href="seasons.html">Seasons</a> |
+    <a href="teams.html">Teams</a> |
+    <a href="players.html">Players</a> |
+    <a href="player_team_relations.html">Player Team Relations</a> |
+    <a href="coaches.html">Coaches</a> |
+    <a href="coach_team_relations.html">Coach Team Relations</a>
+  </div>
 
+  <h1>Seasons</h1>
 
-<p>
-<p>
-Here is the table for Seasons:
-</p>
-<div class="scroll_box">
-<table id="seasons" >
-<thead>
-  <tr>
-   <th>season_id</th>
-   <th>league_id</th>
-   <th>season_name</th>
-   <th>date_season_started</th>
-   <th>date_season_ended</th>
-   <th>league_champion</th>
-   <th>western_champion</th>
-   <th>eastern_champion</th>
-   <th>most_valuable_player</th>
-   <th>defensive_player_of_the_year</th>
-   <th>most_improved_player_of_the_year</th>
-   <th>sixth_man_of_the_year</th>
-   <th>Edit</th>
-   <th>Delete</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th><input type="submit" value="edit" /></th>
-    <th><input type="submit" value="delete" /></th>
-   </tr>
-   </thead>
-   </table>
-</div>
-   <br />
-<form>
-<legend>
-Add a row to the table:
-</legend>
-<div class="add_row_scroll_box">
-<table id="add seasons">
-<thead>
-  <tr>
-   <th>league_id</th>
-   <th>season_name</th>
-   <th>date_season_started</th>
-   <th>date_season_ended</th>
-   <th>league_champion</th>
-   <th>western_champion</th>
-   <th>eastern_champion</th>
-   <th>most_valuable_player</th>
-   <th>defensive_player_of_the_year</th>
-   <th>most_improved_player_of_the_year</th>
-   <th>sixth_man_of_the_year</th>
-   <tbody>
-  <tr>
-    <td> <input type="number" name="league_id" size="10" maxlength="11"></td>
-    <td><input type="text" name="season_name" size="10" maxlength ="255"></td>
-    <td><input type="date" name="date_season_started" size="10"></td>
-    <td><input type="date" name="date_season_ended" size="10"></td>
-    <td><input type="text" name="league_champion" size="10" maxlength ="255"></td>
-    <td><input type="text" name="western_champion" size="10" maxlength ="255"></td>
-    <td><input type="text" name="eastern_champion" size="10" maxlength ="255"></td>
-    <td><input type="text" name="most_valuable_player_of_the_year" size="10" maxlength ="255"></td>
-    <td><input type="text" name="defensive_player_of_the_year" size="10" maxlength ="255"></td>
-    <td><input type="text" name="most_improved_player_of_the_year" size="10" maxlength ="255"></td>
-    <td><input type="text" name="sixth_man_of_the_year" size="10" maxlength ="255"></td>
+  <p>This is the page for the Seasons table. Here, you are able to view, edit, delete, and add a row on to the table.</p>
+
+  <p>
+
+  <p>Here is the table for Seasons:</p>
+
+  <div class="scroll_box">
+    <table id="seasons" >
+      <thead>
+        <tr>
+          <th>season_id</th>
+          <th>league_id</th>
+          <th>season_name</th>
+          <th>date_season_started</th>
+          <th>date_season_ended</th>
+          <th>league_champion</th>
+          <th>western_champion</th>
+          <th>eastern_champion</th>
+          <th>most_valuable_player</th>
+          <th>defensive_player_of_the_year</th>
+          <th>most_improved_player_of_the_year</th>
+          <th>sixth_man_of_the_year</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>2000-2001</td>
+          <td>2000-10-29</td>
+          <td>2001-06-15</td>
+          <td>Los Angeles Lakers</td>
+          <td>Los Angeles Lakers</td>
+          <td>Philadelphia 76ers</td>
+          <td>Allen Iverson</td>
+          <td>Dikembe Mutombo</td>
+          <td>Tracy McGrady</td>
+          <td>Aaron McKie</td>
+          <td><input type="submit" value="edit" /></td>
+          <td><input type="submit" value="delete" /></td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <br />
+
+  <form>
+
+  <legend>Add a row to the table:</legend>
+
+  <div class="add_row_scroll_box">
+    <table id="add seasons">
+      <thead>
+        <tr>
+          <th>league_id</th>
+          <th>season_name</th>
+          <th>date_season_started</th>
+          <th>date_season_ended</th>
+          <th>league_champion</th>
+          <th>western_champion</th>
+          <th>eastern_champion</th>
+          <th>most_valuable_player</th>
+          <th>defensive_player_of_the_year</th>
+          <th>most_improved_player_of_the_year</th>
+          <th>sixth_man_of_the_year</th>
+      <tbody>
+        <tr>
+          <td> <input type="number" name="league_id" size="10" maxlength="11"></td>
+          <td><input type="text" name="season_name" size="10" maxlength ="255"></td>
+          <td><input type="date" name="date_season_started" size="10"></td>
+          <td><input type="date" name="date_season_ended" size="10"></td>
+          <td><input type="text" name="league_champion" size="10" maxlength ="255"></td>
+          <td><input type="text" name="western_champion" size="10" maxlength ="255"></td>
+          <td><input type="text" name="eastern_champion" size="10" maxlength ="255"></td>
+          <td><input type="text" name="most_valuable_player_of_the_year" size="10" maxlength ="255"></td>
+          <td><input type="text" name="defensive_player_of_the_year" size="10" maxlength ="255"></td>
+          <td><input type="text" name="most_improved_player_of_the_year" size="10" maxlength ="255"></td>
+          <td><input type="text" name="sixth_man_of_the_year" size="10" maxlength ="255"></td>
     </table> 
-</div>
-   <div>
+  </div>
+
+  <div>
     <br />
-        <input type="submit" value="Submit" />
-   </div>
-    
-</form>
-</p>
+    <input type="submit" value="Submit" />
+  </div>
 
-
-
+  </form>
+  </p>
 
 </body>
 

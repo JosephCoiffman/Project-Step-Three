@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="links">
+    <a href="index.html">Home</a> |
+    <a href="index.html">League Histories</a> |
+    <a href="seasons.html">Seasons</a> |
+    <a href="teams.html">Teams</a> |
+    <a href="players.html">Players</a> |
+    <a href="player_team_relations.html">Player Team Relations</a> |
+    <a href="coaches.html">Coaches</a> |
+    <a href="coach_team_relations.html">Coach Team Relations</a>
+  </div>
+
+  <h1>
+  League Histories</h1>
+
+  <p>This is the page for the League Histories table. Here, you are able to view, edit, delete, and add a row on to the table.</p>
+
+  <p>
+
+    <p>Here is the table for league_histories:</p>
+
+    <div class="scroll_box">
+      <table id="league_histories">
+        <thead>
+          <tr>
+            <th>league_id</th>
+            <th>league_name</th>
+            <th>completed_seasons_num</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>NBA</td>
+            <td>74</td>
+            <td><input type="submit" value="edit" /></td>
+            <td><input type="submit" value="delete" /></td>
+          </tr>
+        </thead>
+      </table>  
+    </div>
+    
+  </p>
+
+  <form>
+    <legend>Add a row to the table:</legend>
+      <div class="add_row_scroll_box">
+        <table id="add_league_histories">
+          <thead>
+            <tr>
+            <th> completed_seasons_num</th>
+          <tbody>
+            <tr>
+            <td> <input type="number" name="completed_seasons_num" size="10" maxlength="11" min="0"></td>
+          </table>
+      </div>
+      <div>
+      <br />
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+
+</body>
+
+
+</html>

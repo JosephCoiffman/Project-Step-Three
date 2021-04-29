@@ -5,74 +5,240 @@
 </head>
 <body>
 
+  <div id="links">
+    <a href="index.html">Home</a> |
+    <a href="league_histories.html">League Histories</a> |
+    <a href="seasons.html">Seasons</a> |
+    <a href="teams.html">Teams</a> |
+    <a href="players.html">Players</a> |
+    <a href="player_team_relations.html">Player Team Relations</a> |
+    <a href="coaches.html">Coaches</a> |
+    <a href="coach_team_relations.html">Coach Team Relations</a>
+  </div>
 
-<h1>
-League Histories
-</h1>
-<p>
-This is the page for the League Histories table. Here, you are able to view, edit, delete, and add a row on to the table.
-</p>
-<div id="links">
-<ul>
-<li><a href="index.html">League Histories</a> </li>
-<li><a href="seasons.html">Seasons</a> </li>
-<li><a href="teams.html">Teams</a> </li>
-<li><a href="players.html">Players</a> </li>
-<li><a href="player_team_relations.html">Player Team Relations</a> </li>
-<li><a href="coaches.html">Coaches</a> </li>
-<li><a href="coach_team_relations.html">Coach Team Relations</a> </li>
-</ul>
-</div>
+  <h1>Basketball Statistics Tables</h1>
 
-<p>
+  <h2>This page displays an overview of all database table entries.</h2>
 
-Here is the table for league_histories:
-<br/>
-<div class="scroll_box">
-<table id="league_histories" >
-<thead>
-  <tr>
-   <th>league_id</th>
-   <th>completed_seasons_num</th>
-   <th>Edit</th>
-   <th>Delete</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th></th>
-    <th><input type="submit" value="edit" /></th>
-    <th><input type="submit" value="delete" /></th>
-   </tr>
-   </thead>
-   
-   </table>  
-</div>
+  <h3>League Histories:</h3>
 
+  <div  class="scroll_box">
+    <table id="league_histories" >
+      <thead>
+        <tr>
+          <th>league_id</th>
+          <th>league_name</th>
+          <th>completed_seasons_num</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>NBA</td>
+          <td>74</td>
+        </tr>
+      </thead>
+    </table>  
+  </div>
 
-   <br />
+  <h3>Seasons:</h3>
 
-
-<form>
-<legend>
-Add a row to the table:
-</legend>
-<div class="add_row_scroll_box">
-<table id="add_league_histories">
-<thead>
-  <tr>
-  <th> completed_seasons_num</th>
-   <tbody>
-  <tr>
-    <td> <input type="number" name="completed_seasons_num" size="10" maxlength="11" min="0"></td>
+  <div class="scroll_box">
+    <table id="seasons" >
+      <thead>
+        <tr>
+          <th>season_id</th>
+          <th>league_id</th>
+          <th>season_name</th>
+          <th>date_season_started</th>
+          <th>date_season_ended</th>
+          <th>league_champion</th>
+          <th>western_champion</th>
+          <th>eastern_champion</th>
+          <th>most_valuable_player</th>
+          <th>defensive_player_of_the_year</th>
+          <th>most_improved_player_of_the_year</th>
+          <th>sixth_man_of_the_year</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>2000-2001</td>
+          <td>2000-10-29</td>
+          <td>2001-06-15</td>
+          <td>Los Angeles Lakers</td>
+          <td>Los Angeles Lakers</td>
+          <td>Philadelphia 76ers</td>
+          <td>Allen Iverson</td>
+          <td>Dikembe Mutombo</td>
+          <td>Tracy McGrady</td>
+          <td>Aaron McKie</td>
+        </tr>
+      </thead>
     </table>
-</div>
+  </div>
 
-   <div>
-    <br />
-        <input type="submit" value="Submit" />
-   </div>
-    </form>
-</p>
+  <h3>Teams:</h3>
+  <div class="scroll_box">
+    <table id="teams" >
+      <thead>
+        <tr>
+          <th>team_id</th>
+          <th>season_id</th>
+          <th>team_name</th>
+          <th>team_place_city</th>
+          <th>team_place_state</th>
+          <th>points_per_game</th>
+          <th>assists_per_game</th>
+          <th>steals_per_game</th>
+          <th>blocks_per_game</th>
+          <th>rebounds_per_game</th>
+          <th>fouls_per_game</th>
+          <th>fg_attempted_per_game</th>
+          <th>3pt_fg_attempted_per_game</th>
+          <th>ft_attempted_per_game</th>
+          <th>fg_percentage</th>
+          <th>3pt_fg_percentage</th>
+          <th>ft_percentage</th>
+          <th>point_deferential</th>
+          <th>reg_season_wins_num</th>
+          <th>reg_season_losses_num</th>
+          <th>reg_season_win_percentage</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>76ers</td>
+          <td>Philadelphia</td>
+          <td>Pennsylvania</td>
+          <td>94.7</td>
+          <td>20.6</td>
+          <td>8.4</td>
+          <td>5.0</td>
+          <td>44.8</td>
+          <td>20.4</td>
+          <td>79.1</td>
+          <td>9.8</td>
+          <td>27.8</td>
+          <td>0.447</td>
+          <td>0.326</td>
+          <td>0.745</td>
+          <td>4.7</td>
+          <td>56</td>
+          <td>26</td>
+          <td>0.683</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <h3>Players:</h3>
+  <div class="scroll_box">
+    <table id="seasons" >
+      <thead>
+        <tr>
+          <th>player_id</th>    
+          <th>team_id</th>    
+          <th>name</th>
+          <th>player_number</th>
+          <th>player_height_feet</th>
+          <th>player_height_inch</th>
+          <th>points_per_game</th>
+          <th>assists_per_game</th>
+          <th>steals_per_game</th>
+          <th>blocks_per_game</th>
+          <th>rebounds_per_game</th>
+          <th>fouls_per_game</th>
+          <th>fg_attempted_per_game</th>
+          <th>3pt_fg_attempted_per_game</th>
+          <th>ft_attempted_per_game</th>
+          <th>fg_percentage</th>
+          <th>3pt_fg_percentage</th>
+          <th>ft_percentage</th>
+          <th>plus_minus</th>
+        </tr>
+        <tr>
+          <td>1</td>    
+          <td>1</td>    
+          <td>Allen Iverson</td>
+          <td>3</td>
+          <td>6</td>
+          <td>0</td>
+          <td>31.1</td>
+          <td>4.6</td>
+          <td>2.5</td>
+          <td>0.3</td>
+          <td>3.8</td>
+          <td>2.1</td>
+          <td>25.5</td>
+          <td>4.3</td>
+          <td>10.1</td>
+          <td>0.420</td>
+          <td>0.320</td>
+          <td>0.814</td>
+          <td>6.1</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <h3>Player Team Relations:</h3>
+  <div class="scroll_box">
+    <table id="player_team_relations" >
+      <thead>
+        <tr>
+          <th>player_team_id</th>
+          <th>player_id</th>
+          <th>team_id</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <h3>Coaches:</h3>
+  <div class="scroll_box">
+    <table id="coaches" >
+      <thead>
+        <tr>
+          <th>coach_id</th>
+          <th>team_id</th>
+          <th>coach_name</th>   
+          <th>coach_wins</th>
+          <th>coach_losses</th>
+          <th>coach_win_percentage</th>
+        </tr>
+        <tr>
+          <td>1</th>
+          <td>1</th>
+          <td>Larry Brown</th>
+          <td>56</th>
+          <td>26</th>
+          <td>0.683</th>
+        </tr>
+      </thead>
+    </table>  
+  </div>
+
+  <h3>Coach Team Relations:</h3>
+  <div class="scroll_box">
+    <table id="coach_team_relations" >
+      <thead>
+        <tr>
+          <th>coach_team_id</th>
+          <th>coach_id</th>
+          <th>team_id</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
 
 </body>
 
