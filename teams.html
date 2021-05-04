@@ -22,7 +22,15 @@
 
   <p>
 
-  <p>Here is the table for Teams:</p>
+ <p>Here is the table for Teams: <label for="team-filter">Order by:</label>
+
+<select name="team-filter" id="team-filter" onChange="filterTheTeamsTable();">
+  <option value="points-per-game">Points Per Game</option>
+  <option value="fg-percentage">FG percentage</option>
+  <option value="record">Record</option>
+  <option value="name">Name</option>
+</select>
+</p> 
 
   <div class="scroll_box">
     <table id="teams" >
@@ -143,6 +151,7 @@
 
   </form>
   </p>
+<script src="script.js"></script>
 
 </body>
 

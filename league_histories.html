@@ -23,7 +23,13 @@
 
   <p>
 
-    <p>Here is the table for League Histories:</p>
+    <p>Here is the table for League Histories: <label for="league-histories-filter">Order by:</label>
+
+<select name="league-histories-filter" id="league-histories-filter" onChange="filterTheLhTable();">
+  <option value="league-name">League Name</option>
+  <option value="complted-seasons-num">Number of Completed Seasons</option>
+</select>
+</p> 
 
     <div class="scroll_box">
       <table id="league_histories">
@@ -68,6 +74,7 @@
     </div>
   </form>
 
+<script src="script.js"></script>
 </body>
 
 

@@ -22,7 +22,13 @@
 
   <p>
 
-  <p>Here is the table for Player Team Relations:</p> 
+  <p>Here is the table for Player Team Relations: <label for="ptr-filter">Order by:</label>
+
+<select name="ptr-filter" id="ptr-filter" onChange="filterThePtrTable();">
+  <option value="team">Team</option>
+  <option value="player">Player</option>
+</select>
+</p>  
 
   <br/>
 
@@ -74,6 +80,7 @@
   </form>
   </p>
 
+<script src="script.js"></script>
 </body>
 
 

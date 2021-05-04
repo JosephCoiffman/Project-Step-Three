@@ -22,7 +22,14 @@
 
   <p>
 
-  <p>Here is the table for Coaches:</p> 
+  <p>Here is the table for Coaches: <label for="coach-filter">Order by:</label>
+
+<select name="coach-filter" id="coach-filter" onChange="filterTheCoachesTable();">
+  <option value="team">Team</option>
+  <option value="name">Name</option>
+  <option value="record">Record</option>
+</select>
+</p>  
 
   <br/>
 
@@ -86,6 +93,7 @@
   </form>
   </p>
 
+<script src="script.js"></script>
 </body>
 
 

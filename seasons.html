@@ -22,7 +22,15 @@
 
   <p>
 
-  <p>Here is the table for Seasons:</p>
+  <p>Here is the table for Seasons: <label for="season-filter">Order by:</label>
+
+<select name="season-filter" id="season-filter" onChange="filterTheSeasonsTable();">
+  <option value="date-started">Date Season Started</option>
+  <option value="champion">Champoin</option>
+  <option value="MVP">MVP</option>
+  <option value="name">Name</option>
+</select>
+</p> 
 
   <div class="scroll_box">
     <table id="seasons" >
@@ -108,6 +116,7 @@
   </form>
   </p>
 
+<script src="script.js"></script>
 </body>
 
 

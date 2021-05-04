@@ -22,7 +22,13 @@
 
 <p>
 
-<p>Here is the table for Coach Team Relations:</p> 
+<p>Here is the table for Coach Team Relations:  <label for="ctr-filter">Order by:</label>
+
+<select name="ctr-filter" id="ctr-filter" onChange="filterTheCtrTable();">
+  <option value="team">Team</option>
+  <option value="choach-name">Coach Name</option>
+</select>
+</p> 
 
 <br/>
 <div class="scroll_box">
@@ -73,6 +79,7 @@
 </form>
 </p>
 
+<script src="script.js"></script>
 </body>
 
 
