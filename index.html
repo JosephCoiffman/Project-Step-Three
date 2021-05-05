@@ -20,15 +20,15 @@
 
   <h2>This page displays an overview of all database table entries.</h2>
 
-  <p>League Histories:</p>
+  <h3>League Histories</h3>
 
-  <div  class="scroll_box">
+  <div>
     <table id="league_histories" >
       <thead>
         <tr>
-          <th>league_id</th>
-          <th>league_name</th>
-          <th>completed_seasons_num</th>
+          <th>League ID</th>
+          <th>League Name</th>
+          <th>Number of Completed Seasons</th>
         </tr>
         <tr>
           <td>1</td>
@@ -39,24 +39,33 @@
     </table>  
   </div>
 
-  <p>Seasons:</p>
+  <h3>Seasons</h3>
 
-  <div class="scroll_box">
+  <p>Seasons Legend</p>
+
+  <ul>
+    <li>MVP - Most Valuable Player</li>
+    <li>DPOY - Defensive Player of the Year</li>
+    <li>MIP - Most Improved Player of the Year</li>
+    <li>6MOY - Sixth Man of the Year</li> 
+  </ul>
+
+  <div>
     <table id="seasons" >
       <thead>
         <tr>
-          <th>season_id</th>
-          <th>league_id</th>
-          <th>season_name</th>
-          <th>date_season_started</th>
-          <th>date_season_ended</th>
-          <th>league_champion</th>
-          <th>western_champion</th>
-          <th>eastern_champion</th>
-          <th>most_valuable_player</th>
-          <th>defensive_player_of_the_year</th>
-          <th>most_improved_player_of_the_year</th>
-          <th>sixth_man_of_the_year</th>
+          <th>Season ID</th>
+          <th>League ID</th>
+          <th>Season Name</th>
+          <th>Season Start Date</th>
+          <th>Season End Date</th>
+          <th>Champions</th>
+          <th>Western Champions</th>
+          <th>Eastern Champions</th>
+          <th>MVP</th>
+          <th>DPOY</th>
+          <th>MIP</th>
+          <th>6MOY</th>
         </tr>
         <tr>
           <td>1</td>
@@ -76,32 +85,54 @@
     </table>
   </div>
 
-  <p>Teams:</p>
-  <div class="scroll_box">
+  <h3>Teams</h3>
+
+  <p>Teams Legend</p>
+
+  <ul>
+    <li>PPG - Points Per Game</li>
+    <li>APG - Assists Per Game</li>
+    <li>SPG - Steals Per Game</li>
+    <li>BPG - Blocks Per Game</li> 
+    <li>RPG - Rebounds Per Game</li>
+    <li>PF - Personal Fouls Per Game</li>
+    <li>FGA - Field Goals Attempted Per Game</li>
+    <li>3PA - Three Point Field Goals Attempted Per Game</li>
+    <li>FTA - Free Throws Attempted Per Game</li>
+    <li>FG% - Field Goal Percentage</li>
+    <li>3P% - Three Point Field Goal Percentage</li>
+    <li>FT% - Free Throw Percentage</li>
+    <li>+/- - Point Differential</li>
+    <li>W - Wins</li>
+    <li>L - Losses</li>
+    <li>W/L% - Win Loss Percentage</li>
+  </ul>
+
+  <div>
     <table id="teams" >
       <thead>
         <tr>
-          <th>team_id</th>
-          <th>season_id</th>
-          <th>team_name</th>
-          <th>team_place_city</th>
-          <th>team_place_state</th>
-          <th>points_per_game</th>
-          <th>assists_per_game</th>
-          <th>steals_per_game</th>
-          <th>blocks_per_game</th>
-          <th>rebounds_per_game</th>
-          <th>fouls_per_game</th>
-          <th>fg_attempted_per_game</th>
-          <th>3pt_fg_attempted_per_game</th>
-          <th>ft_attempted_per_game</th>
-          <th>fg_percentage</th>
-          <th>3pt_fg_percentage</th>
-          <th>ft_percentage</th>
-          <th>point_deferential</th>
-          <th>reg_season_wins_num</th>
-          <th>reg_season_losses_num</th>
-          <th>reg_season_win_percentage</th>
+          <th>Team ID</th>
+          <th>Season ID</th>
+          <th>Team Name</th>
+          <th>Team City</th>
+          <th>Team State</th>
+          <th>PPG</th>
+          <th>APG</th>
+          <th>SPG</th>
+          <th>BPG</th>
+          <th>RPG</th>
+          <th>PF</th>
+          <th>FGA</th>
+          <th>3PA</th>
+          <th>FTA</th>
+          <th>FG%</th>
+          <th>3P%</th>
+          <th>FT%</th>
+          <th>+/-</th>
+          <th>W</th>
+          <th>L</th>
+          <th>W/L%</th>
         </tr>
         <tr>
           <td>1</td>
@@ -130,30 +161,49 @@
     </table>
   </div>
 
-  <p>Players:</p>
-  <div class="scroll_box">
+  <h3>Players</h3>
+
+  <p>Players Legend</p>
+
+  <ul>
+    <li>PPG - Points Per Game</li>
+    <li>APG - Assists Per Game</li>
+    <li>SPG - Steals Per Game</li>
+    <li>BPG - Blocks Per Game</li> 
+    <li>RPG - Rebounds Per Game</li>
+    <li>PF - Personal Fouls Per Game</li>
+    <li>FGA - Field Goals Attempted Per Game</li>
+    <li>3PA - Three Point Field Goals Attempted Per Game</li>
+    <li>FTA - Free Throws Attempted Per Game</li>
+    <li>FG% - Field Goal Percentage</li>
+    <li>3P% - Three Point Field Goal Percentage</li>
+    <li>FT% - Free Throw Percentage</li>
+    <li>+/- - Point Differential</li>
+  </ul>
+
+  <div>
     <table id="seasons" >
       <thead>
         <tr>
-          <th>player_id</th>    
-          <th>team_id</th>    
-          <th>name</th>
-          <th>player_number</th>
-          <th>player_height_feet</th>
-          <th>player_height_inch</th>
-          <th>points_per_game</th>
-          <th>assists_per_game</th>
-          <th>steals_per_game</th>
-          <th>blocks_per_game</th>
-          <th>rebounds_per_game</th>
-          <th>fouls_per_game</th>
-          <th>fg_attempted_per_game</th>
-          <th>3pt_fg_attempted_per_game</th>
-          <th>ft_attempted_per_game</th>
-          <th>fg_percentage</th>
-          <th>3pt_fg_percentage</th>
-          <th>ft_percentage</th>
-          <th>plus_minus</th>
+          <th>Player ID</th>    
+          <th>Team ID</th>    
+          <th>Name</th>
+          <th>Jersey Number</th>
+          <th>Height (Ft)</th>
+          <th>Height (In)</th>
+          <th>PPG</th>
+          <th>APG</th>
+          <th>SPG</th>
+          <th>BPG</th>
+          <th>RPG</th>
+          <th>PF</th>
+          <th>FGA</th>
+          <th>3PA</th>
+          <th>FTA</th>
+          <th>FG%</th>
+          <th>3FG%</th>
+          <th>FT%</th>
+          <th>+/-</th>
         </tr>
         <tr>
           <td>1</td>    
@@ -180,14 +230,15 @@
     </table>
   </div>
 
-  <p>Player Team Relations:</p>
-  <div class="scroll_box">
+  <h3>Player Team Relations</h3>
+
+  <div>
     <table id="player_team_relations" >
       <thead>
         <tr>
-          <th>player_team_id</th>
-          <th>player_id</th>
-          <th>team_id</th>
+          <th>Player-Team ID</th>
+          <th>Player ID</th>
+          <th>Team ID</th>
         </tr>
         <tr>
           <td>1</td>
@@ -198,17 +249,18 @@
     </table>
   </div>
 
-  <p>Coaches:</p>
-  <div class="scroll_box">
+  <h3>Coaches</h3>
+
+  <div>
     <table id="coaches" >
       <thead>
         <tr>
-          <th>coach_id</th>
-          <th>team_id</th>
-          <th>coach_name</th>   
-          <th>coach_wins</th>
-          <th>coach_losses</th>
-          <th>coach_win_percentage</th>
+          <th>Coach ID</th>
+          <th>Team ID</th>
+          <th>Coach Name</th>   
+          <th>Coach Wins</th>
+          <th>Coach Losses</th>
+          <th>Coach Win Percentage</th>
         </tr>
         <tr>
           <td>1</th>
@@ -222,14 +274,15 @@
     </table>  
   </div>
 
-  <p>Coach Team Relations:</p>
-  <div class="scroll_box">
+  <h3>Coach Team Relations</h3>
+  
+  <div>
     <table id="coach_team_relations" >
       <thead>
         <tr>
-          <th>coach_team_id</th>
-          <th>coach_id</th>
-          <th>team_id</th>
+          <th>Coach-Team ID</th>
+          <th>Coach ID</th>
+          <th>Team ID</th>
         </tr>
         <tr>
           <td>1</td>
