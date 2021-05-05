@@ -31,15 +31,18 @@
     <li>6MOY - Sixth Man of the Year</li> 
   </ul>
 
-  <p>Here is the table for Seasons: <label for="season-filter">Order by:</label>
+  <p>Here is the table for Seasons:<label for="season-filter">Order by:</label>
 
-<select name="season-filter" id="season-filter" onChange="filterTheSeasonsTable();">
-  <option value="date-started">Date Season Started</option>
-  <option value="champion">Champion</option>
-  <option value="MVP">MVP</option>
-  <option value="name">Name</option>
-</select>
-</p> 
+  <select name="season-filter" id="season-filter" onChange="filterTheSeasonsTable();">
+    <option value="date-started">Date Season Started</option>
+    <option value="champion">Champion</option>
+    <option value="MVP">Most Valuable Player</option>
+    <option value="DPOY">Defensive Player of the Year</option>
+    <option value="MIP">Most Improved Player of the Year</option>
+    <option value="6MOY">Sixth Man of the Year</option>
+  </select>
+
+  </p> 
 
   <div>
     <table id="seasons" >

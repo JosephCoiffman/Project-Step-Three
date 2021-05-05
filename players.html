@@ -40,17 +40,22 @@
     <li>+/- - Plus Minus</li>
   </ul>
 
-  <p>Here is the table for Players: <label for="player-filter">Order by:</label>
+  <p>Here is the table for Players: <label for="player-filter">Order by: </label>
 
-<select name="player-filter" id="player-filter" onChange="filterThePlayersTable();">
-  <option value="team">Team</option>
-  <option value="points">Points</option>
-  <option value="assists">Assists</option>
-  <option value="rebounds">Rebounds</option>
-  <option value="blocks">Blocks</option>
-  <option value="steals">Steals</option>
-</select>
-</p> 
+  <select name="player-filter" id="player-filter" onChange="filterThePlayersTable();">
+    <option value="player-name">Name</option>
+    <option value="player-points-per-game">Points Per Game</option>
+    <option value="player-rebounds-per-game">Rebounds Per Game</option>
+    <option value="player-assists-per-game">Assists Per Game</option>
+    <option value="player-blocks-per-game">Blocks Per Game</option>
+    <option value="player-steals-per-game">Steals Per Game</option>    
+    <option value="player-fg-percentage">Field Goal Percentage</option>
+
+  </select>
+
+  <label for="player-search">Search Players by Name: </label><input name="player-search" placeholder="Enter First Name, Last Name, etc." type="text" size="30" maxlength ="255">
+
+  </p> 
 
   <div>
     <table id="seasons" >
