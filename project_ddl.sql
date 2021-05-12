@@ -1,12 +1,4 @@
-SET FOREIGN_KEY_CHECKS = 0
-DROP TABLE IF EXISTS league_histories;
-DROP TABLE IF EXISTS seasons;
-DROP TABLE IF EXISTS teams;
-DROP TABLE IF EXISTS players;
-DROP TABLE IF EXISTS player_team_relations;
-DROP TABLE IF EXISTS coaches;
-DROP TABLE IF EXISTS coach_team_relations;
-SET FOREIGN_KEY_CHECKS = 1;
+-- Data Definition Queries
 
 CREATE TABLE league_histories (
   league_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
