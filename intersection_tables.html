@@ -11,14 +11,13 @@
     <a href="seasons.html">Seasons</a> |
     <a href="teams.html">Teams</a> |
     <a href="players.html">Players</a> |
-    <a href="player_team_relations.html">Player Team Relations</a> |
     <a href="coaches.html">Coaches</a> |
-    <a href="coach_team_relations.html">Coach Team Relations</a>
+    <a href="intersection_tables.html">Intersection Tables</a>
   </div>
 
   <h1>Player Team Relations</h1>
 
-  <p>This is the page for the Player Team Relations table. Here, you are able to view, edit, delete, and add a row on to the table.</p>
+  <p>This is the section for the Player Team Relations table. Here, you are able to view, edit, delete, and add a row on to the table.</p>
 
   <p>
 
@@ -68,6 +67,69 @@
       <tbody>
         <tr>
           <td> <input type="number" name="player_id" size="10" maxlength="11"></td>
+          <td> <input type="number" name="team_id" size="10" maxlength="11"></td>
+    </table>  
+  </div>
+
+  <div>
+    <br />
+    <input type="submit" value="Submit" />
+  </div>
+
+  </form>
+  </p>
+
+  <h1>Coach Team Relations</h1>
+
+  <p>This is the section for the Coach Team Relations table. Here, you are able to view, edit, delete, and add a row on to the table.</p>
+
+  <p>
+
+  <p>Here is the table for Coach Team Relations:  <label for="ctr-filter">Order by:</label>
+
+  <select name="ctr-filter" id="ctr-filter" onChange="filterTheCtrTable();">
+    <option value="team">Team</option>
+    <option value="coach-name">Coach Name</option>
+  </select>
+  </p> 
+
+  <br/>
+  <div>
+    <table id="coach_team_relations" >
+      <thead>
+        <tr>
+          <th>Coach-Team ID</th>
+          <th>Coach ID</th>
+          <th>Team ID</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><input type="submit" value="edit" /></td>
+          <td><input type="submit" value="delete" /></td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <br />
+
+
+  <form>
+
+  <legend>Add a row to the table:</legend>
+
+  <div>
+    <table id="add_coach_team_relations">
+      <thead>
+        <tr>
+          <th>Coach ID</th>
+          <th>Team ID</th>
+      <tbody>
+        <tr>
+          <td> <input type="number" name="coach_id" size="10" maxlength="11"></td>
           <td> <input type="number" name="team_id" size="10" maxlength="11"></td>
     </table>  
   </div>
