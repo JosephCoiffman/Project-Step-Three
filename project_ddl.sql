@@ -1,3 +1,12 @@
+-- Drop table to reset database
+DROP TABLE IF EXISTS `league_histories`;
+DROP TABLE IF EXISTS `seasons`;
+DROP TABLE IF EXISTS `teams`;
+DROP TABLE IF EXISTS `players`;
+DROP TABLE IF EXISTS `player_team_relations`;
+DROP TABLE IF EXISTS `coaches`;
+DROP TABLE IF EXISTS `coach_team_relations`;
+
 -- Data Definition Queries
 
 -- Create League Histories Table
@@ -21,7 +30,7 @@ CREATE TABLE seasons (
   defensive_player_of_the_year varchar(255) NOT NULL,
   most_improved_player_of_the_year varchar(255) NOT NULL,
   sixth_man_of_the_year varchar(255) NOT NULL,
-  FOREIGN KEY (league_id) REFERENCES league_histories (league_id)  ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (league_id) REFERENCES league_histories (league_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Create Teams table
@@ -31,22 +40,22 @@ CREATE TABLE teams (
   team_name varchar(255) NOT NULL,
   team_place_city varchar(255) NOT NULL,
   team_place_state varchar(255) NOT NULL,
-  points_per_game dec(10, 0) NOT NULL,
-  assists_per_game dec(10, 0) NOT NULL,
-  steals_per_game dec(10, 0) NOT NULL,
-  blocks_per_game dec(10, 0) NOT NULL,
-  rebounds_per_game dec(10, 0) NOT NULL,
-  fouls_per_game dec(10, 0) NOT NULL,
-  fg_attempted_per_game dec(10, 0) NOT NULL,
-  3pt_fg_attempted_per_game dec(10, 0) NOT NULL,
-  fg_percentage dec(10, 0) NOT NULL,
-  3pt_fg_percentage dec(10, 0) NOT NULL,
-  ft_percentage dec(10, 0) NOT NULL,
-  point_differential dec(10, 0) NOT NULL,
+  points_per_game decimal(10, 0) NOT NULL,
+  assists_per_game decimal(10, 0) NOT NULL,
+  steals_per_game decimal(10, 0) NOT NULL,
+  blocks_per_game decimal(10, 0) NOT NULL,
+  rebounds_per_game decimal(10, 0) NOT NULL,
+  fouls_per_game decimal(10, 0) NOT NULL,
+  fg_attempted_per_game decimal(10, 0) NOT NULL,
+  3pt_fg_attempted_per_game decimal(10, 0) NOT NULL,
+  fg_percentage decimal(10, 0) NOT NULL,
+  3pt_fg_percentage decimal(10, 0) NOT NULL,
+  ft_percentage decimal(10, 0) NOT NULL,
+  point_differential decimal(10, 0) NOT NULL,
   reg_season_wins int(11) NOT NULL,
   reg_season_losses int(11) NOT NULL,
-  reg_season_win_percentage dec(10, 0) NOT NULL,
-  FOREIGN KEY (season_id) REFERENCES seasons (season_id)  ON DELETE CASCADE ON UPDATE CASCADE
+  reg_season_win_percentage decimal(10, 0) NOT NULL,
+  FOREIGN KEY (season_id) REFERENCES seasons (season_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Create Players table
@@ -56,17 +65,17 @@ CREATE TABLE players (
   player_jersey_number varchar(255) NOT NULL, 
   player_height_feet int(11) NOT NULL,
   player_height_inch int(11) NOT NULL,
-  points_per_game dec(10, 0),
-  assists_per_game dec(10, 0),
-  steals_per_game dec(10, 0),
-  blocks_per_game dec(10, 0),
-  rebounds_per_game dec(10, 0), 
-  fouls_per_game dec(10, 0),
-  fg_attempted_per_game dec(10, 0),
-  3pt_fg_attempted_per_game dec(10, 0),
-  ft_attempted_per_game dec(10, 0),
-  ft_percentage dec(10, 0),
-  plus_minus dec(10, 0)
+  points_per_game decimal(10, 0),
+  assists_per_game decimal(10, 0),
+  steals_per_game decimal(10, 0),
+  blocks_per_game decimal(10, 0),
+  rebounds_per_game decimal(10, 0), 
+  fouls_per_game decimal(10, 0),
+  fg_attempted_per_game decimal(10, 0),
+  3pt_fg_attempted_per_game decimal(10, 0),
+  ft_attempted_per_game decimal(10, 0),
+  ft_percentage decimal(10, 0),
+  plus_minus decimal(10, 0)
 );
 
 -- Create Player Team Relations table
@@ -92,8 +101,8 @@ CREATE coach_team_relations (
   coach_team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   coach_id int(11) NOT NULL,
   team_id int(11) NOT NULL,
-  FOREIGN KEY (coach_id) REFERENCES coaches (coach_id)  ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (coach_id) REFERENCES coaches (coach_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (team_id) REFERENCES teams (team_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Insert values into League Histories table
@@ -118,7 +127,7 @@ VALUES ("1", "2000-2001", "2000",
 ("1", "2010-2011", "2010", 
 "2011", "Dallas Mavericks", "Dallas Mavericks", 
 "Miami Heat", "Derrick Rose", "Dwight Howard", 
-"Kevin Love", "Lamar Odom"),
+"Kevin Love", "Lamar Odom");
 
 -- Insert values into Teams table
 INSERT INTO teams (season_id, team_name, team_place_city, 
