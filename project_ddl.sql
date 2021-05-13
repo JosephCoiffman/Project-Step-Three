@@ -30,7 +30,7 @@ CREATE TABLE seasons (
   defensive_player_of_the_year varchar(255) NOT NULL,
   most_improved_player_of_the_year varchar(255) NOT NULL,
   sixth_man_of_the_year varchar(255) NOT NULL,
-  FOREIGN KEY (league_id) REFERENCES league_histories (league_id) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY (league_id) REFERENCES league_histories(league_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Create Teams table
@@ -40,22 +40,23 @@ CREATE TABLE teams (
   team_name varchar(255) NOT NULL,
   team_place_city varchar(255) NOT NULL,
   team_place_state varchar(255) NOT NULL,
-  points_per_game decimal(10, 0) NOT NULL,
-  assists_per_game decimal(10, 0) NOT NULL,
-  steals_per_game decimal(10, 0) NOT NULL,
-  blocks_per_game decimal(10, 0) NOT NULL,
-  rebounds_per_game decimal(10, 0) NOT NULL,
-  fouls_per_game decimal(10, 0) NOT NULL,
-  fg_attempted_per_game decimal(10, 0) NOT NULL,
-  3pt_fg_attempted_per_game decimal(10, 0) NOT NULL,
-  fg_percentage decimal(10, 0) NOT NULL,
-  3pt_fg_percentage decimal(10, 0) NOT NULL,
-  ft_percentage decimal(10, 0) NOT NULL,
-  point_differential decimal(10, 0) NOT NULL,
+  points_per_game decimal(5, 1) NOT NULL,
+  assists_per_game decimal(5, 1) NOT NULL,
+  steals_per_game decimal(5, 1) NOT NULL,
+  blocks_per_game decimal(5, 1) NOT NULL,
+  rebounds_per_game decimal(5, 1) NOT NULL,
+  fouls_per_game decimal(5, 1) NOT NULL,
+  fg_attempted_per_game decimal(5, 1) NOT NULL,
+  3pt_fg_attempted_per_game decimal(5, 1) NOT NULL,
+  ft_attempted_per_game decimal(5, 1) NOT NULL,
+  fg_percentage decimal(5, 3) NOT NULL,
+  3pt_fg_percentage decimal(5, 3) NOT NULL,
+  ft_percentage decimal(5, 3) NOT NULL,
+  point_differential decimal(5, 1) NOT NULL,
   reg_season_wins int(11) NOT NULL,
   reg_season_losses int(11) NOT NULL,
-  reg_season_win_percentage decimal(10, 0) NOT NULL,
-  FOREIGN KEY (season_id) REFERENCES seasons (season_id) ON DELETE RESTRICT ON UPDATE CASCADE
+  reg_season_win_percentage decimal(5, 3) NOT NULL,
+  FOREIGN KEY (season_id) REFERENCES seasons(season_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Create Players table
@@ -65,44 +66,46 @@ CREATE TABLE players (
   player_jersey_number varchar(255) NOT NULL, 
   player_height_feet int(11) NOT NULL,
   player_height_inch int(11) NOT NULL,
-  points_per_game decimal(10, 0),
-  assists_per_game decimal(10, 0),
-  steals_per_game decimal(10, 0),
-  blocks_per_game decimal(10, 0),
-  rebounds_per_game decimal(10, 0), 
-  fouls_per_game decimal(10, 0),
-  fg_attempted_per_game decimal(10, 0),
-  3pt_fg_attempted_per_game decimal(10, 0),
-  ft_attempted_per_game decimal(10, 0),
-  ft_percentage decimal(10, 0),
-  plus_minus decimal(10, 0)
+  points_per_game decimal(5, 1),
+  assists_per_game decimal(5, 1),
+  steals_per_game decimal(5, 1),
+  blocks_per_game decimal(5, 1),
+  rebounds_per_game decimal(5, 1), 
+  fouls_per_game decimal(5, 1),
+  fg_attempted_per_game decimal(5, 1),
+  3pt_fg_attempted_per_game decimal(5, 1),
+  ft_attempted_per_game decimal(5, 1),
+  fg_percentage decimal(5, 3),
+  3pt_fg_percentage decimal(5, 3),
+  ft_percentage decimal(5, 3),
+  plus_minus decimal(5, 1)
 );
 
 -- Create Player Team Relations table
-CREATE player_team_relations (
+CREATE TABLE player_team_relations (
   player_team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   player_id int(11) NOT NULL,
   team_id int(11) NOT NULL,
-  FOREIGN KEY (player_id) REFERENCES players (player_id)  ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (player_id) REFERENCES players(player_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Create Coaches Table
-CREATE coaches (
+CREATE TABLE coaches (
   coach_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   coach_name varchar(255) NOT NULL,
   coach_wins int(11) NOT NULL,
   coach_losses int(11) NOT NULL,
-  coach_win_percentage dec(10, 0)
+  coach_win_percentage dec(5, 3)
 );
 
 -- Create Coach Team Relations table
-CREATE coach_team_relations (
+CREATE TABLE coach_team_relations (
   coach_team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   coach_id int(11) NOT NULL,
   team_id int(11) NOT NULL,
-  FOREIGN KEY (coach_id) REFERENCES coaches (coach_id) ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY (team_id) REFERENCES teams (team_id) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY (coach_id) REFERENCES coaches(coach_id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Insert values into League Histories table
@@ -116,16 +119,16 @@ INSERT INTO seasons (league_id, season_name, date_season_started,
 date_season_ended, league_champion, western_champion, 
 eastern_champion, most_valuable_player, defensive_player_of_the_year, 
 most_improved_player_of_the_year, sixth_man_of_the_year)
-VALUES ("1", "2000-2001", "2000", 
-"2001", "Los Angeles Lakers", "Los Angeles Lakers", 
+VALUES ("1", "2000-2001", "2000-10-31", 
+"2001-04-18", "Los Angeles Lakers", "Los Angeles Lakers", 
 "Philadelphia 76ers", "Allen Iverson", "Dikembe Mutombo", 
 "Tracy McGrady", "Aaron McKie"),
-("1", "2005-2006", "2005", 
-"2006", "Miami Heat", "Dallas Mavericks", 
+("1", "2005-2006", "2005-11-01", 
+"2006-04-19", "Miami Heat", "Dallas Mavericks", 
 "Miami Heat", "Steve Nash", "Ben Wallace", 
 "Boris Diaw", "Mike Miller"),
-("1", "2010-2011", "2010", 
-"2011", "Dallas Mavericks", "Dallas Mavericks", 
+("1", "2010-2011", "2010-10-26", 
+"2011-04-13", "Dallas Mavericks", "Dallas Mavericks", 
 "Miami Heat", "Derrick Rose", "Dwight Howard", 
 "Kevin Love", "Lamar Odom");
 
