@@ -5,10 +5,9 @@ CREATE TABLE league_histories (
   league_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   league_name varchar(255) NOT NULL,
   completed_seasons_num int(11) NOT NULL
-)
+);
 
 -- Create Seasons Table
-Create Seasons
 CREATE TABLE seasons (
   season_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   league_id int(11) NOT NULL,
@@ -23,7 +22,7 @@ CREATE TABLE seasons (
   most_improved_player_of_the_year varchar(255) NOT NULL,
   sixth_man_of_the_year varchar(255) NOT NULL,
   FOREIGN KEY (league_id) REFERENCES league_histories (league_id)  ON DELETE CASCADE ON UPDATE CASCADE
-)
+);
 
 -- Create Teams table
 CREATE TABLE teams (
@@ -48,7 +47,7 @@ CREATE TABLE teams (
   reg_season_losses int(11) NOT NULL,
   reg_season_win_percentage dec(10, 0) NOT NULL,
   FOREIGN KEY (season_id) REFERENCES seasons (season_id)  ON DELETE CASCADE ON UPDATE CASCADE
-)
+);
 
 -- Create Players table
 CREATE TABLE players (
@@ -68,7 +67,7 @@ CREATE TABLE players (
   ft_attempted_per_game dec(10, 0),
   ft_percentage dec(10, 0),
   plus_minus dec(10, 0)
-)
+);
 
 -- Create Player Team Relations table
 CREATE player_team_relations (
@@ -77,7 +76,7 @@ CREATE player_team_relations (
   team_id int(11) NOT NULL,
   FOREIGN KEY (player_id) REFERENCES players (player_id)  ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
-)
+);
 
 -- Create Coaches Table
 CREATE coaches (
@@ -86,7 +85,7 @@ CREATE coaches (
   coach_wins int(11) NOT NULL,
   coach_losses int(11) NOT NULL,
   coach_win_percentage dec(10, 0)
-)
+);
 
 -- Create Coach Team Relations table
 CREATE coach_team_relations (
@@ -95,18 +94,31 @@ CREATE coach_team_relations (
   team_id int(11) NOT NULL,
   FOREIGN KEY (coach_id) REFERENCES coaches (coach_id)  ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
-)
+);
 
 -- Insert values into League Histories table
 INSERT INTO league_histories (league_name, completed_seasons_num)
-VALUES
+VALUES ("NBA", "74"),
+("WNBA", "24"),
+("Euroleague", "63");
 
 -- Insert values into Seasons table
 INSERT INTO seasons (league_id, season_name, date_season_started, 
 date_season_ended, league_champion, western_champion, 
 eastern_champion, most_valuable_player, defensive_player_of_the_year, 
 most_improved_player_of_the_year, sixth_man_of_the_year)
-VALUES
+VALUES ("1", "2000-2001", "2000", 
+"2001", "Los Angeles Lakers", "Los Angeles Lakers", 
+"Philadelphia 76ers", "Allen Iverson", "Dikembe Mutombo", 
+"Tracy McGrady", "Aaron McKie"),
+("1", "2005-2006", "2005", 
+"2006", "Miami Heat", "Dallas Mavericks", 
+"Miami Heat", "Steve Nash", "Ben Wallace", 
+"Boris Diaw", "Mike Miller"),
+("1", "2010-2011", "2010", 
+"2011", "Dallas Mavericks", "Dallas Mavericks", 
+"Miami Heat", "Derrick Rose", "Dwight Howard", 
+"Kevin Love", "Lamar Odom"),
 
 -- Insert values into Teams table
 INSERT INTO teams (season_id, team_name, team_place_city, 
@@ -116,26 +128,65 @@ fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game,
 ft_attempted_per_game, fg_percentage, 3pt_fg_percentage, 
 ft_percentage, point_differential, reg_season_wins, 
 reg_season_losses, reg_season_win_percentage)
-VALUES
+VALUES ("1", "Los Angeles Lakers", "Los Angeles", 
+"California", "100.6", "23.0", 
+"6.9", "6.0", "44.7", 
+"22.8", "81.5", "15.5", 
+"28.5", "0.465", "0.344", 
+"0.683", "3.2", "56", 
+"26", "0.683"),
+("2", "Miami Heat", "Miami", 
+"Florida", "99.9", "20.6", 
+"6.4", "5.4", "43.1", 
+"22.8", "77.5", "17.6", 
+"19.7", "0.478", "0.345", 
+"0.700", "3.9", "52", 
+"30", "0.634"),
+("3", "Dallas Mavericks", "Dallas", 
+"Texas", "100.2", "23.8", 
+"6.8", "4.3", "41.5", 
+"19.2", "78.8", "21.6", 
+"22.6", "0.475", "0.365", 
+"0.777", "4.2", "57", 
+"25", "0.695");
 
 -- Insert values into Players table
 INSERT INTO players (player_name, player_jersey_number, player_height_feet, 
 player_height_inch, points_per_game, assists_per_game, 
 steals_per_game, blocks_per_game, rebounds_per_game, 
 fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, 
-fg_attempted_per_game, fg_percentage, 3pt_fg_percentage, 
+ft_attempted_per_game, fg_percentage, 3pt_fg_percentage, 
 ft_percentage, plus_minus)
-VALUES
+VALUES ("Shaquille O''Neal", "34", "7", 
+"1", "28.7", "3.7", 
+"0.6", "2.8", "12.7", 
+"3.5", "19.2", "0.0", 
+"13.1", "0.572", "0.000", 
+"0.513", "8.0"),
+("Dwyane Wade", "3", "6", 
+"4", "27.2", "6.7", 
+"1.9", "0.8", "5.7", 
+"2.9", "18.8", "1.0", 
+"10.7", "0.495", "0.171", 
+"0.783", "8.3"),
+("Dirk Nowitzki", "41", "7", 
+"0", "23.0", "2.6", 
+"0.5", "0.6", "7.0", 
+"2.4", "16.2", "2.3", 
+"6.1", "0.517", "0.393", 
+"0.892", "10.6");
 
 -- Insert values into Player Team Relations table
 INSERT INTO player_team_relations (player_id, team_id)
-VALUES
+VALUES ("1", "1"), ("2", "2"), ("3", "3");
 
 -- Insert values into Coaches table
 INSERT INTO coaches (coach_name, coach_wins, coach_losses, 
 coach_win_percentage)
-VALUES
+VALUES ("Phil Jackson", "56", "26", "0.683"),
+("Pat Riley", "41", "20", "0.671"),
+("Rick Carlisle", "57", "25", "0.695");
 
 -- Insert values into Coach Team Relations table
 INSERT INTO coach_team_relations (coach_id, team_id)
-VALUES
+VALUES ("1", "1"), ("2", "2"), ("3", "3");
