@@ -1,11 +1,14 @@
 -- Data Definition Queries
 
+-- Create League Histories Table
 CREATE TABLE league_histories (
   league_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   league_name varchar(255) NOT NULL,
   completed_seasons_num int(11) NOT NULL
 )
 
+-- Create Seasons Table
+Create Seasons
 CREATE TABLE seasons (
   season_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   league_id int(11) NOT NULL,
@@ -22,6 +25,7 @@ CREATE TABLE seasons (
   FOREIGN KEY (league_id) REFERENCES league_histories (league_id)  ON DELETE CASCADE ON UPDATE CASCADE
 )
 
+-- Create Teams table
 CREATE TABLE teams (
   team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   season_id int(11) NOT NULL,
@@ -35,7 +39,7 @@ CREATE TABLE teams (
   rebounds_per_game dec(10, 0) NOT NULL,
   fouls_per_game dec(10, 0) NOT NULL,
   fg_attempted_per_game dec(10, 0) NOT NULL,
-  3pt_attempted_per_game dec(10, 0) NOT NULL,
+  3pt_fg_attempted_per_game dec(10, 0) NOT NULL,
   fg_percentage dec(10, 0) NOT NULL,
   3pt_fg_percentage dec(10, 0) NOT NULL,
   ft_percentage dec(10, 0) NOT NULL,
@@ -46,6 +50,7 @@ CREATE TABLE teams (
   FOREIGN KEY (season_id) REFERENCES seasons (season_id)  ON DELETE CASCADE ON UPDATE CASCADE
 )
 
+-- Create Players table
 CREATE TABLE players (
   player_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   player_name varchar(255) NOT NULL,
@@ -65,6 +70,7 @@ CREATE TABLE players (
   plus_minus dec(10, 0)
 )
 
+-- Create Player Team Relations table
 CREATE player_team_relations (
   player_team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   player_id int(11) NOT NULL,
@@ -73,6 +79,7 @@ CREATE player_team_relations (
   FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
 )
 
+-- Create Coaches Table
 CREATE coaches (
   coach_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   coach_name varchar(255) NOT NULL,
@@ -81,6 +88,7 @@ CREATE coaches (
   coach_win_percentage dec(10, 0)
 )
 
+-- Create Coach Team Relations table
 CREATE coach_team_relations (
   coach_team_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   coach_id int(11) NOT NULL,
@@ -89,23 +97,45 @@ CREATE coach_team_relations (
   FOREIGN KEY (team_id) REFERENCES teams (team_id)  ON DELETE CASCADE ON UPDATE CASCADE
 )
 
+-- Insert values into League Histories table
 INSERT INTO league_histories (league_name, completed_seasons_num)
 VALUES
 
-INSERT INTO seasons (league_id, season_name, date_season_started, date_season_ended, league_champion, western_champion, eastern_champion, most_valuable_player, defensive_player_of_the_year, most_improved_player_of_the_year, sixth_man_of_the_year)
+-- Insert values into Seasons table
+INSERT INTO seasons (league_id, season_name, date_season_started, 
+date_season_ended, league_champion, western_champion, 
+eastern_champion, most_valuable_player, defensive_player_of_the_year, 
+most_improved_player_of_the_year, sixth_man_of_the_year)
 VALUES
 
-INSERT INTO teams (season_id, team_name, team_place_city, team_place_state, points_per_game, assists_per_game, steals_per_game, blocks_per_game, rebounds_per_game, fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, ft_attempted_per_game, fg_percentage, 3pt_fg_percentage, ft_percentage, point_differential, reg_season_wins, reg_season_losses, reg_season_win_percentage)
+-- Insert values into Teams table
+INSERT INTO teams (season_id, team_name, team_place_city, 
+team_place_state, points_per_game, assists_per_game, 
+steals_per_game, blocks_per_game, rebounds_per_game, 
+fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, 
+ft_attempted_per_game, fg_percentage, 3pt_fg_percentage, 
+ft_percentage, point_differential, reg_season_wins, 
+reg_season_losses, reg_season_win_percentage)
 VALUES
 
-INSERT INTO players (player_name, player_jersey_number, player_height_feet, player_height_inch, points_per_game, assists_per_game, steals_per_game, blocks_per_game, rebounds_per_game, fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, fg_attempted_per_game, fg_percentage, 3pt_fg_percentage, ft_percentage, plus_minus)
+-- Insert values into Players table
+INSERT INTO players (player_name, player_jersey_number, player_height_feet, 
+player_height_inch, points_per_game, assists_per_game, 
+steals_per_game, blocks_per_game, rebounds_per_game, 
+fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, 
+fg_attempted_per_game, fg_percentage, 3pt_fg_percentage, 
+ft_percentage, plus_minus)
 VALUES
 
+-- Insert values into Player Team Relations table
 INSERT INTO player_team_relations (player_id, team_id)
 VALUES
 
-INSERT INTO coaches (coach_name, coach_wins, coach_losses, coach_win_percentage)
+-- Insert values into Coaches table
+INSERT INTO coaches (coach_name, coach_wins, coach_losses, 
+coach_win_percentage)
 VALUES
 
+-- Insert values into Coach Team Relations table
 INSERT INTO coach_team_relations (coach_id, team_id)
 VALUES

@@ -4,8 +4,8 @@
 SELECT * FROM league_histories;
 
 -- League Histories Page insert query
-INSERT INTO league_histories ()
-VALUES ();
+INSERT INTO league_histories (league_name, completed_seasons_num)
+VALUES ($leagueName, $completedSeasonsNum);
 
 -- League Histories Page update query
 UPDATE league_histories
@@ -21,14 +21,20 @@ DELETE FROM league_histories WHERE league_id = $id;
 SELECT * FROM seasons;
 
 -- Seasons Page insert query
-INSERT INTO seasons ()
-VALUES ();
+INSERT INTO seasons (league_id, season_name, date_season_started, 
+date_season_ended, league_champion, western_champion, 
+eastern_champion, most_valuable_player, sixth_man_of_the_year)
+VALUES ($leagueID, $seasonName, $dateSeasonStarted, 
+$dateSeasonEnded, $leagueChampion, $westernChampion, 
+$easternChampion, $mostValuablePlayer, $defensivePlayerOfTheYear, 
+$mostImprovedPlayerOfTheYear, $sixthManOfTheYear);
 
 -- Seasons Page update query
 UPDATE seasons
 SET league_id = $leagueID, season_name = $seasonName, date_season_started = $dateSeasonStarted, 
 date_season_ended = $dateSeasonEnded, league_champion = $leagueChampion, western_champion = $westernChampion, 
-eastern_champion = $easternChampion, most_valuable_player = $mostValuablePlayer, sixth_man_of_the_year = $sixthManOfTheYear
+eastern_champion = $easternChampion, most_valuable_player = $mostValuablePlayer, defensive_player_of_the_year = $defensivePlayerOfTheYear, 
+most_improved_player_of_the_year = $mostImprovedPlayerOfTheYear, sixth_man_of_the_year = $sixthManOfTheYear
 WHERE seasons_id = $id;
 
 -- Seasons Page delete query
@@ -40,15 +46,27 @@ DELETE FROM seasons WHERE season_id = $id;
 SELECT * FROM teams;
 
 -- Teams Page insert query
-INSERT INTO teams ()
-VALUES ();
+INSERT INTO teams (season_id, team_name, team_place_city, 
+team_place_state, points_per_game, assists_per_game, 
+steals_per_game, blocks_per_game, rebounds_per_game, 
+fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game,
+fg_percentage, 3pt_fg_percentage, ft_percentage,
+point_differential, reg_season_wins, reg_season_losses, 
+reg_season_win_percentage)
+VALUES ($seasonID, $teamName, $teamPlaceCity, 
+$teamPlaceState, $pointsPerGame, $assistsPerGame, 
+$stealsPerGame, $blocksPerGame, $reboundsPerGame, 
+$foulsPerGame, $fgAttemptedPerGame, $3ptfgAttemptedPerGame, 
+$fgPercentage, $3ptfgPercentage, $ftPercentage, 
+$pointDifferential, $regSeasonWins, $regSeasonLosses, 
+$regSeasonWinPercentage);
 
 -- Teams Page update query
 UPDATE teams
 SET season_id = $seasonID, team_name = $teamName, team_place_city = $teamPlaceCity, 
 team_place_state = $teamPlaceState, points_per_game = $pointsPerGame, assists_per_game = $assistsPerGame, 
 steals_per_game = $stealsPerGame, blocks_per_game = $blocksPerGame, rebounds_per_game = $reboundsPerGame, 
-fouls_per_game = $foulsPerGame, fg_attempted_per_game = $fgAttemptedPerGame, 3pt_attempted_per_game = $3ptAttemptedPerGame, 
+fouls_per_game = $foulsPerGame, fg_attempted_per_game = $fgAttemptedPerGame, 3pt_fg_attempted_per_game = $3ptfgAttemptedPerGame, 
 fg_percentage = $fgPercentage, 3pt_fg_percentage = $3ptfgPercentage, ft_percentage = $ftPercentage, 
 point_differential = $pointDifferential, reg_season_wins = $regSeasonWins, reg_season_losses = $regSeasonLosses, 
 reg_season_win_percentage = $regSeasonWinPercentage
@@ -63,12 +81,24 @@ DELETE FROM teams WHERE team_id = $id;
 SELECT * FROM players;
 
 -- Players Page insert query
-INSERT INTO players ()
-VALUES ();
+INSERT INTO players (player_name, player_jersey_number, player_height_feet, 
+player_height_inch, points_per_game, assists_per_game, 
+steals_per_game, blocks_per_game, rebounds_per_game, 
+fouls_per_game, fg_attempted_per_game, 3pt_fg_attempted_per_game, 
+ft_attempted_per_game, ft_percentage, plus_minus)
+VALUES ($playerName, $playerJerseyNumber, $player_height_feet, 
+$playerHeightInch, $pointsPerGame, $assistsPerGame, 
+$stealsPerGame, $blocksPerGame, $reboundsPerGame, 
+$foulsPerGame, $fgAttemptedPerGame, $3ptfgAttemptedPerGame, 
+$ftAttemptedPerGame, $ftPercentage, $plusMinus);
 
 -- Players Page update query
 UPDATE players
-SET player_name = $playerName, player_jersey_number = $playerJerseyNumber
+SET player_name = $playerName, player_jersey_number = $playerJerseyNumber, player_height_feet = $player_height_feet, 
+player_height_inch = $playerHeightInch, points_per_game = $pointsPerGame, assists_per_game = $assistsPerGame, 
+steals_per_game = $stealsPerGame, blocks_per_game = $blocksPerGame, rebounds_per_game = $reboundsPerGame, 
+fouls_per_game = $foulsPerGame, fg_attempted_per_game = $fgAttemptedPerGame, 3pt_fg_attempted_per_game = $3ptfgAttemptedPerGame, 
+ft_attempted_per_game = $ftAttemptedPerGame, ft_percentage = $ftPercentage, plus_minus = $plusMinus
 WHERE players_id = $id;
 
 -- Players Page delete query
@@ -80,8 +110,8 @@ DELETE FROM players WHERE player_id = $id;
 SELECT * FROM player_team_relations;
 
 -- Player Team Relations Page insert query
-INSERT INTO player_team_relations ()
-VALUES ();
+INSERT INTO player_team_relations (player_id, team_id)
+VALUES ($playerID, $teamID);
 
 -- Player Team Relations Page update query
 UPDATE player_team_relations
@@ -97,12 +127,13 @@ DELETE FROM player_team_relations WHERE player_team_relations_id = $id;
 SELECT * FROM coaches;
 
 -- Coaches Page insert query
-INSERT INTO coaches ()
-VALUES ();
+INSERT INTO coaches (coach_name, coach_wins, coach_losses, coach_win_percentage)
+VALUES ($coachName, $coachWins, $coachLosses, $coachWinPercentage);
 
 -- Coaches Page update query
 UPDATE coaches
-SET coach_name = $coachName, coach_wins = $coachWins, coach_losses = $coachLosses, coach_win_percentage = $coachWinPercentage
+SET coach_name = $coachName, coach_wins = $coachWins, coach_losses = $coachLosses, 
+coach_win_percentage = $coachWinPercentage
 WHERE coach_id = $id;
 
 -- Coaches Page delete query
@@ -114,8 +145,8 @@ DELETE FROM coaches WHERE coach_id = $id;
 SELECT * FROM coach_team_relations;
 
 -- Coach Team Relations Page insert query
-INSERT INTO coach_team_relations ()
-VALUES ();
+INSERT INTO coach_team_relations (coach_id, team_id)
+VALUES ($coachID, $teamID);
 
 -- Coach Team Relations Page update query
 UPDATE coach_team_relations
