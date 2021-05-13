@@ -1,3 +1,6 @@
+-- Data Manipulation Queries
+--$data represents user input
+
 -- LEAGUE HISTORIES
 
 -- League Histories Page select query 
@@ -119,7 +122,7 @@ SET player_id = $playerID, team_id = $teamID
 WHERE player_team_relations_id = $id;
 
 -- Player Team Relations Page delete query
-DELETE FROM player_team_relations WHERE player_team_relations_id = $id;
+DELETE FROM player_team_relations WHERE player_team_id = $id;
 
 -- COACHES
 
@@ -154,4 +157,4 @@ SET coach_id = $coachID, team_id = $teamID
 WHERE coach_team_relations_id = $id;
 
 -- Coach Team Relations Page delete query
-DELETE FROM coach_team_relations WHERE coach_team_relations_id = $id;
+DELETE FROM coach_team_relations WHERE coach_team_id = $id;
